@@ -1,14 +1,21 @@
-import React from 'react'
-import "./CampoTexto.css"
+import "./CampoTexto.css";
 
 export const CampoTexto = (props) => {
-
   // const placeholderModificado = `${props.placeholder}:`
 
+  const aoDigitado = (e) => {
+    props.aoAlterado(e.target.value);
+  };
   return (
-    <div className='campo-texto'>
-        <label htmlFor="">{props.label}</label>
-        <input type="text" placeholder={`${props.placeholder}:`}/>
+    <div className="campo-texto">
+      <label>{props.label}</label>
+      <input
+        value={props.valor}
+        onChange={aoDigitado}
+        required={props.obrigatorio}
+        type="text"
+        placeholder={`${props.placeholder}:`}
+      />
     </div>
-  )
-}
+  );
+};
