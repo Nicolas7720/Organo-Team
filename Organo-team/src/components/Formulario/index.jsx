@@ -4,16 +4,6 @@ import { CampoTexto } from "../CampoTexto";
 import { ListaSuspensa } from "../ListaSuspensa";
 import Botao from "../Botao";
 
-const teams = [
-  "Programação",
-  "Front-End",
-  "Data Science",
-  "Devops",
-  "UX e Design",
-  "Mobile",
-  "Inovação e Gestão",
-];
-
 export const Formulario = (props) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
@@ -57,7 +47,7 @@ export const Formulario = (props) => {
         />
         <ListaSuspensa
           label="Time"
-          itens={teams}
+          itens={props.times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
